@@ -96,7 +96,7 @@ if  [ ! -e '/tmp/besttrace' ]; then
     echo "Installing Besttrace......"
     dir=$(pwd)
     cd /tmp/
-    wget  -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/ZBench/master/besttrace > /dev/null 2>&1
+    wget  -N --no-check-certificate https://raw.githubusercontent.com/jayjjjjj/Zb/master/besttrace > /dev/null 2>&1
     cd $dir
 fi
 chmod a+rx /tmp/besttrace
@@ -118,7 +118,7 @@ if  [ ! -e '/tmp/speedtest.py' ]; then
     echo "Installing SpeedTest......"
     dir=$(pwd)
     cd /tmp/
-    wget -N --no-check-certificate https://raw.github.com/sivel/speedtest-cli/master/speedtest.py > /dev/null 2>&1
+    wget -N --no-check-certificate https://raw.github.com/Jayjjjjj/Zb/master/speedtest.py > /dev/null 2>&1
     cd $dir
 fi
 chmod a+rx /tmp/speedtest.py
@@ -129,7 +129,7 @@ if  [ ! -e '/tmp/ZPing-CN.py' ]; then
     echo "Installing ZPing-CN.py......"
     dir=$(pwd)
     cd /tmp/
-    wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/ZBench/master/ZPing-CN.py > /dev/null 2>&1
+    wget -N --no-check-certificate https://raw.githubusercontent.com/Jayjjjjj/Zb/master/ZPing.py > /dev/null 2>&1
     cd $dir
 fi
 chmod a+rx /tmp/ZPing-CN.py
@@ -230,15 +230,15 @@ speed_test_cn(){
 
 speed_cn() {
 
-    speed_test_cn '12637' '襄阳电信'
-    speed_test_cn '3633' '上海电信'
-    speed_test_cn '4624' '成都电信'
-    speed_test_cn '4863' "西安电信"
+    speed_test_cn '17251' '广州电信'
+    speed_test_cn '6611' '广州移动'
+	speed_test_cn '4515' "深圳移动"
+	speed_test_cn '3633' '上海电信'
+    speed_test_cn '16803' '上海移动'
     speed_test_cn '5083' '上海联通'
-    speed_test_cn '5726' '重庆联通'
-    speed_test_cn '4751' "北京电信"
-    speed_test_cn '5145' '北京联通'
-    speed_test_cn '6132' '湖南电信'
+    speed_test_cn '7509' '杭州电信'
+    speed_test_cn '5300' '杭州联通'
+    speed_test_cn '4647' '杭州移动'
 
     rm -rf /tmp/speedtest.py
 }
@@ -400,11 +400,6 @@ TSU=$( cat /tmp/shu.txt_table )
 TGM=$( cat /tmp/gdm.txt_table )
 TGT=$( cat /tmp/gdt.txt_table )
 TGU=$( cat /tmp/gdu.txt_table )
-curl 'http://api.zbench.kirito.moe/action.php' --data "CPUmodel=$cname &CPUspeed=$freq MHz &CPUcore=$cores &HDDsize=$disk_total_size GB ($disk_used_size GB 已使用) &RAMsize=$tram MB ($uram MB 已使用)&SWAPsize=$swap MB ($uswap MB 已使用)&UPtime= $up&Arch=1&systemload=$load&OS= $opsy &Arch=$arch ($lbit 位)&Kernel=$kern &Virmethod=$virtua &IOa=$io1&IOb=$io2&IOc=$io3&NetCFspeec=$NetCFspeec&NetCFping=$NetCFping&NetLJPspeed=$NetLJPspeed&NetLJPping=$NetLJPping&NetLSGspeed=$NetLSGspeed&NetLSGping=$NetLSGping&NetLUKspeed=$NetLUKspeed&NetLUKping=$NetLUKping&NetLDEspeed=$NetLDEspeed&NetLDEping=$NetLDEping&NetLCAspeed=$NetLCAspeed&NetLCAping=$NetLCAping&NetSTXspeed=$NetSTXspeed&NetSTXping=$NetSTXping&NetSWAspeed=$NetSWAspeed&NetSWAping=$NetSWAping&NetSDEspeed=$NetSDEspeed&NetSDEping=$NetSDEping&NetSSGspeed=$NetSSGspeed&NetSSGping=$NetSSGping&NetSCNspeed=$NetSCNspeed&NetSCNping=$NetSCNping&NetUPST=$NetUPST&NetDWST=$NetDWST&NetPiST=$NetPiST&NetUPCT=$NetUPCT&NetDWCT=$NetDWCT&NetPiCT=$NetPiCT&NetUPXT=$NetUPXT&NetDWXT=$NetDWXT&NetPiXT=$NetPiXT&NetUPSU=$NetUPSU&NetDWSU=$NetDWSU&NetPiSU=$NetPiSU&NetUPCU=$NetUPCU&NetDWCU=$NetDWCU&NetPiCU=$NetPiCU&NetUPXM=$NetUPXM&NetDWXM=$NetDWXM&NetPiXM=$NetPiXM&NetUPSM=$NetUPSM&NetDWSM=$NetDWSM&NetPiSM=$NetPiSM&NetUPCM=$NetUPCM&NetDWCM=$NetDWCM&NetPiCM=$NetPiCM&TSM=$TSM&TST=$TST&TSU=$TSU&TGM=$TGM&TGT=$TGT&TGU=$TGU&AKEY=$AKEY&Provider=$Provider"
-IKEY=$(curl "http://api.zbench.kirito.moe/getkey.php?AKEY=$AKEY" 2>/dev/null)
-echo "在线查看测评报告：https://zbench.kirito.moe/record-cn.php?IKEY=$IKEY"
-echo "您的测评报告已保存在 /root/report.html"
-
 # If use simple http server
 while :; do echo
   read -p "你想现在查看您的测评报告吗? [y/n]: " ifreport

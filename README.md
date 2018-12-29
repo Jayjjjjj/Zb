@@ -1,6 +1,7 @@
 # Zench
 
 又一个Linux VPS测评脚本
+修改了测试节点。。本地化？
 
 ## 说明
 
@@ -14,11 +15,11 @@
 
 中文版：
 
-    wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/ZBench/master/ZBench-CN.sh && bash ZBench-CN.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/Jayjjjjj/Zb/master/ZBench-CN.sh && bash ZBench-CN.sh
     
 英文版：
 
-    wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/ZBench/master/ZBench.sh && bash ZBench.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/Jayjjjjj/Zb/master/ZBench.sh && bash ZBench.sh
     
 ## 效果图
 
@@ -34,5 +35,5 @@
 * python实现ping程序 ( [https://www.s0nnet.com/archives/python-icmp](https://www.s0nnet.com/archives/python-icmp) )
 * Python 设置颜色 ( [http://www.pythoner.com/357.html](http://www.pythoner.com/357.html) )
 * Kirito's Blog ( [https://www.ixh.me](https://www.ixh.me) )
-irrrrrr
+
 

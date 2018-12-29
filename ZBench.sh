@@ -118,7 +118,7 @@ if  [ ! -e '/tmp/speedtest.py' ]; then
     echo "Installing SpeedTest......"
     dir=$(pwd)
     cd /tmp/
-    wget  -N --no-check-certificate https://raw.github.com/Jayjjjjj/Zb/master/speedtest.py > /dev/null 2>&1
+    wget  -N --no-check-certificate https://raw.githubusercontent.com/Jayjjjjj/Zb/master/speedtest.py > /dev/null 2>&1
     cd $dir
 fi
 chmod a+rx /tmp/speedtest.py
@@ -235,14 +235,14 @@ speed_cn() {
     rm -rf /tmp/speed_cn.txt && touch /tmp/speed_cn.txt
 
     speed_test_cn '17251' 'Guangzhou CT'
-    speed_test_cn '3633' 'Shanghai   CT'
-    speed_test_cn '6611' 'Guangzhou  CM'
+	speed_test_cn '6611' 'Guangzhou CM'
+	speed_test_cn '4515' "Shenzhen  CM"
+    speed_test_cn '3633' 'Shanghai  CT'
     speed_test_cn '16803' 'Shanghai  CM'
-    speed_test_cn '5083' 'Shanghai   CU'
-    speed_test_cn '7509' 'Hangzhou   CT'
-    speed_test_cn '4515' "Shenzhen   CM"
-    speed_test_cn '5300' 'Hangzhou   CU'
-    speed_test_cn '4647' 'Hangzhou   CM'
+    speed_test_cn '5083' 'Shanghai  CU'
+    speed_test_cn '7509' 'Hangzhou  CT'
+    speed_test_cn '5300' 'Hangzhou  CU'
+    speed_test_cn '4647' 'Hangzhou  CM'
  
     rm -rf /tmp/speedtest.py
 }
@@ -407,10 +407,7 @@ TSU=$( cat /tmp/shu.txt_table )
 TGM=$( cat /tmp/gdm.txt_table )
 TGT=$( cat /tmp/gdt.txt_table )
 TGU=$( cat /tmp/gdu.txt_table )
-curl 'http://api.zbench.kirito.moe/action.php' --data "CPUmodel=$cname &CPUspeed=$freq MHz &CPUcore=$cores &HDDsize=$disk_total_size GB ($disk_used_size GB 已使用) &RAMsize=$tram MB ($uram MB 已使用)&SWAPsize=$swap MB ($uswap MB 已使用)&UPtime= $up&Arch=1&systemload=$load&OS= $opsy &Arch=$arch ($lbit 位)&Kernel=$kern &Virmethod=$virtua &IOa=$io1&IOb=$io2&IOc=$io3&NetCFspeec=$NetCFspeec&NetCFping=$NetCFping&NetLJPspeed=$NetLJPspeed&NetLJPping=$NetLJPping&NetLSGspeed=$NetLSGspeed&NetLSGping=$NetLSGping&NetLUKspeed=$NetLUKspeed&NetLUKping=$NetLUKping&NetLDEspeed=$NetLDEspeed&NetLDEping=$NetLDEping&NetLCAspeed=$NetLCAspeed&NetLCAping=$NetLCAping&NetSTXspeed=$NetSTXspeed&NetSTXping=$NetSTXping&NetSWAspeed=$NetSWAspeed&NetSWAping=$NetSWAping&NetSDEspeed=$NetSDEspeed&NetSDEping=$NetSDEping&NetSSGspeed=$NetSSGspeed&NetSSGping=$NetSSGping&NetSCNspeed=$NetSCNspeed&NetSCNping=$NetSCNping&NetUPST=$NetUPST&NetDWST=$NetDWST&NetPiST=$NetPiST&NetUPCT=$NetUPCT&NetDWCT=$NetDWCT&NetPiCT=$NetPiCT&NetUPXT=$NetUPXT&NetDWXT=$NetDWXT&NetPiXT=$NetPiXT&NetUPSU=$NetUPSU&NetDWSU=$NetDWSU&NetPiSU=$NetPiSU&NetUPCU=$NetUPCU&NetDWCU=$NetDWCU&NetPiCU=$NetPiCU&NetUPXM=$NetUPXM&NetDWXM=$NetDWXM&NetPiXM=$NetPiXM&NetUPSM=$NetUPSM&NetDWSM=$NetDWSM&NetPiSM=$NetPiSM&NetUPCM=$NetUPCM&NetDWCM=$NetDWCM&NetPiCM=$NetPiCM&TSM=$TSM&TST=$TST&TSU=$TSU&TGM=$TGM&TGT=$TGT&TGU=$TGU&AKEY=$AKEY&Provider=$Provider"
 
-IKEY=$(curl "http://api.zbench.kirito.moe/getkey.php?AKEY=$AKEY" 2>/dev/null)
-echo "Result Address：https://zbench.kirito.moe/record.php?IKEY=$IKEY"
 echo "Your bench data is saved to /root/report.html"
 
 # If use simple http server
