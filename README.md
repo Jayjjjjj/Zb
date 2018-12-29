@@ -34,5 +34,5 @@
 * python实现ping程序 ( [https://www.s0nnet.com/archives/python-icmp](https://www.s0nnet.com/archives/python-icmp) )
 * Python 设置颜色 ( [http://www.pythoner.com/357.html](http://www.pythoner.com/357.html) )
 * Kirito's Blog ( [https://www.ixh.me](https://www.ixh.me) )
-
+irrrrrr
 
